@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
 
 
     override fun onSensorChanged(event: SensorEvent) {
-        if (event.sensor.type == Sensor.TYPE_ACCELEROMETER && isMoving) {
+        if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
             val sensitivity = 1f
             val xChange = event.values[0] * sensitivity
             val yChange = event.values[1] * sensitivity
@@ -70,8 +70,6 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                 newY - radius < 0 || newY + radius > screenHeight
             ) {
                 score.value += 1
-                isMoving = false
-                isCircleVisible.value = false
             } else {
                 position.value = Offset(newX, newY)
             }
