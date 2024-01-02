@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">funny-circle</string>
+    <string name="notification">You won</string>
+    <string name="play_again">Play again</string>
 </resources>
